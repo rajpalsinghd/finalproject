@@ -1,0 +1,31 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demo.domain.*;
+import com.example.demo.repositories.TraineeRepository;
+@Service
+public class UserService {
+
+	@Autowired
+private TraineeRepository traineeRepository;
+	
+	public void blockUser(User user)
+	{
+	Role role=user.getRole();
+	System.out.println(role.getName());
+	if(role.getName().equalsIgnoreCase("Trainee"))
+	{
+		Trainee trainee=traineeRepository.findById(user.getId());
+		trainee.setBlock(true);
+		traineeRepository.deleteById(user.getId());
+		traineeRepository.save(trainee);
+	}
+		
+	}public void deleteUser(User user)
+	{
+		
+	}
+	
+	
+}

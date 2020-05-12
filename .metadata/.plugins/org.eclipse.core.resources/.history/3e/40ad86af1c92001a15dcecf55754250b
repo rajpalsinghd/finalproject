@@ -1,0 +1,43 @@
+package com.example.domain;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import com.example.domain.Assignment;
+@Entity
+public class Trainee {
+
+@NotBlank(message = "User Id required")	
+private String traineeId;
+@NotBlank(message = "Name required")
+private String name;
+
+private List<Document>documents;
+private List<Assignment>assignments;
+
+public String getTraineeId() {
+	return traineeId;
+}
+public void setTraineeId(String traineeId) {
+	this.traineeId = traineeId;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public List<Document> getDocuments() {
+	return documents;
+}
+public void setDocuments(List<Document> documents) {
+	this.documents = documents;
+}
+public List<Assignment> getAssignments() {
+	return assignments;
+}
+public void setAssignments(List<Assignment> assignments) {
+	this.assignments = assignments;
+}
+}

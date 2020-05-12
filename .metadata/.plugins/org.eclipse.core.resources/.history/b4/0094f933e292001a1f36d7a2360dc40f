@@ -1,0 +1,13 @@
+package com.example.demo.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.domain.Trainee;
+
+@Repository
+public interface TraineeRepository extends CrudRepository<Trainee, Integer>
+
+{
+public Trainee findByTraineeId(String traineeId);
+}

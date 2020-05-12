@@ -1,0 +1,24 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.domain.Trainee;
+import com.example.demo.repositories.TraineeRepository;
+
+@Service
+public class TraineeService {
+
+@Autowired
+private TraineeRepository traineeRepository;
+
+public Trainee saveTrainee(Trainee trainee)
+{
+	return traineeRepository.save(trainee);
+}
+
+public Trainee getTrainee(String traineeId)
+{
+	return traineeRepository.findByTraineeId(traineeId);
+}
+}

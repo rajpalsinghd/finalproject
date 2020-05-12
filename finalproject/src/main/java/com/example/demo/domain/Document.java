@@ -1,0 +1,46 @@
+package com.example.demo.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+public class Document
+{
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private int id;
+@NotBlank(message = "Name required")
+@Column(updatable = false,unique = true)
+private String name;
+private String description;
+@Column(columnDefinition ="mediumtext")
+private String content;
+public String getDescription() {
+	return description;
+}
+public void setDescription(String description) {
+	this.description = description;
+}
+public String getContent() {
+	return content;
+}
+public void setContent(String content) {
+	this.content = content;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+}

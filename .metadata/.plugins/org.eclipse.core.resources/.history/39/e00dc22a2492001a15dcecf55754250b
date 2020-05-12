@@ -1,0 +1,20 @@
+package com.example.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class Document {
+
+@NotBlank(message ="Name of Document required")
+private String documentName;
+@Column(unique = true,updatable = false)
+private String uniqueIdentifier;
+@NotNull(message = "Trainer details required")
+private Trainer createdByTrainer;
+@NotBlank(message = "Select type of document")
+private Integer type;
+private Boolean isEditable;
+}

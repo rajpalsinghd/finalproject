@@ -1,0 +1,9 @@
+package com.example.domain;
+import java.util.*;
+import com.example.domain.*;
+public class Trainer {
+private List<Document> documents;
+private List<Role>roles;
+private Boolean block;
+
+}

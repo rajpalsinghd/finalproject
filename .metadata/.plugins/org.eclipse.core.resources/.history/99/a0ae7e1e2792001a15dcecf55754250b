@@ -1,0 +1,27 @@
+package com.example.domain;
+import java.util.*;
+import com.example.domain.*;
+public class Trainer {
+private List<Document> documents;
+private List<Role>roles;
+private Boolean block;
+public List<Document> getDocuments() {
+	return documents;
+}
+public void setDocuments(List<Document> documents) {
+	this.documents = documents;
+}
+public List<Role> getRoles() {
+	return roles;
+}
+public void setRoles(List<Role> roles) {
+	this.roles = roles;
+}
+public Boolean getBlock() {
+	return block;
+}
+public void setBlock(Boolean block) {
+	this.block = block;
+}
+
+}

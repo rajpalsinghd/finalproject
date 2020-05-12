@@ -1,0 +1,60 @@
+package com.example.demo.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class Document {
+    @Id
+	private int id;
+    public void setId(int id)
+    {
+    	this.id=id;
+    }
+    public int getId()
+    {
+    	return this.id;
+    }
+@NotBlank(message ="Name of Document required")
+private String documentName;
+@Column(unique = true,updatable = false)
+private String uniqueIdentifier;
+@NotNull(message = "Trainer details required")
+private Trainer createdByTrainer;
+@NotBlank(message = "Select type of document")
+private Integer type;
+private Boolean isEditable;
+public String getDocumentName() {
+	return documentName;
+}
+public void setDocumentName(String documentName) {
+	this.documentName = documentName;
+}
+public String getUniqueIdentifier() {
+	return uniqueIdentifier;
+}
+public void setUniqueIdentifier(String uniqueIdentifier) {
+	this.uniqueIdentifier = uniqueIdentifier;
+}
+public Trainer getCreatedByTrainer() {
+	return createdByTrainer;
+}
+public void setCreatedByTrainer(Trainer createdByTrainer) {
+	this.createdByTrainer = createdByTrainer;
+}
+public Integer getType() {
+	return type;
+}
+public void setType(Integer type) {
+	this.type = type;
+}
+public Boolean getIsEditable() {
+	return isEditable;
+}
+public void setIsEditable(Boolean isEditable) {
+	this.isEditable = isEditable;
+}
+}

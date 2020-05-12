@@ -1,0 +1,22 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+import com.example.demo.domain.*;
+@Service
+public class UserService {
+
+
+	
+	public void blockUser(User user)
+	{
+		if (user instanceof Trainee) {
+			Trainee trainee = (Trainee) user;
+			
+		}	}
+	public void deleteUser(User user)
+	{
+		
+	}
+	
+	
+}

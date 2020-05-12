@@ -1,0 +1,12 @@
+package com.example.demo.domain;
+
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+
+
+public class Assignment {
+
+
+	private String name;
+
+}

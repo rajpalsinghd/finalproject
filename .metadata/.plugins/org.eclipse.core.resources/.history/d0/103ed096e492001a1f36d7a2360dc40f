@@ -1,0 +1,49 @@
+package com.example.demo.domain;
+import java.util.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.example.demo.domain.*;
+@Entity
+public class Trainer {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	private int id;
+@OneToMany
+private List<Document> documents;
+public void setId(int id)
+{
+	this.id=id;
+}
+public int getId()
+{
+	return this.id;
+}
+@OneToMany
+	private List<Role>roles;
+private Boolean block;
+public List<Document> getDocuments() {
+	return documents;
+}
+public void setDocuments(List<Document> documents) {
+	this.documents = documents;
+}
+public List<Role> getRoles() {
+	return roles;
+}
+public void setRoles(List<Role> roles) {
+	this.roles = roles;
+}
+public Boolean getBlock() {
+	return block;
+}
+public void setBlock(Boolean block) {
+	this.block = block;
+}
+
+}
